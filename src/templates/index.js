@@ -27,7 +27,6 @@ const Index = ({ data, pageContext }) => {
     )
 }
 
-
 export default Index
 
 // This page query loads all posts sorted descending by published date

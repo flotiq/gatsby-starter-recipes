@@ -11,6 +11,16 @@ dotenv.config()
 */
 module.exports = {
     plugins: [
+        {
+            resolve: `gatsby-plugin-remote-images`,
+            options: {
+                nodeType: `_media`,
+                imagePath: `url`,
+                prepareUrl: function (url) {
+                    return process.env.GATSBY_FLOTIQ_BASE_URL + url
+                },
+            },
+        },
         /**
          *  Content Plugins
          */

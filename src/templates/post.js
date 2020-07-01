@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { Layout } from '../components/common'
+import Img from "gatsby-image"
 
 /**
 * Single post view (/:slug)
@@ -23,8 +24,7 @@ const Post = ({ data }) => {
                     <article className="content">
                         { post.image && post.image[0] ?
                             <figure className="post-feature-image">
-                                <img src={ `${process.env.GATSBY_FLOTIQ_BASE_URL}/image/1280x0/${post.image[0].id}.${post.image[0].extension}` }
-                                     alt={ post.name } />
+                                <Img fluid={post.image[0].localImage.childImageSharp.fluid}/>
                             </figure> : null }
                         <section className="post-full-content">
                             <h1 className="content-title">{post.name}</h1>
@@ -57,21 +57,13 @@ const Post = ({ data }) => {
                             <h2 className="content-title">Steps</h2>
                             {post.steps !== null ? <section className="content-body">
                                 { post.steps.map((step, index) => (
-                                    <div className="recipe-step" key={index}>
+                                    <div className="recipe-step" key={index.toString()}>
                                         <div className="recipe-step-index">
                                             <div>{index + 1}</div>
                                         </div>
                                         <div className="recipe-step-data">
-                                            <p>
-                                                {step.step}</p>
-
-                                            {
-                                                step.image && step.image[0] ?
-                                                    <img
-                                                        src={`${process.env.GATSBY_FLOTIQ_BASE_URL}/image/1280x0/${step.image[0].id}.${step.image[0].extension}`}
-                                                        alt={post.name}/> : ''
-                                            }
-
+                                            <p>{step.step}</p>
+                                            <Img fluid={step.image[0].localImage.childImageSharp.fluid} />
                                         </div>
                                     </div>
                                 ))}
@@ -102,15 +94,25 @@ export const recipeQuery = graphql`
           steps {
             step
             image {
-              extension
-              id
+              localImage {
+                childImageSharp {
+                    fluid (maxWidth: 600){
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+              }
             }
           }
           cookingTime
           servings
           image {
-            extension
-            id
+            localImage {
+                childImageSharp {
+                    fluid (maxWidth: 1280){
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+              }
           }
         }
     }
