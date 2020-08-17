@@ -12,7 +12,7 @@ const PostCard = ({ post }) => {
             <header className="post-card-header">
                 {post.image && post.image[0] ?
                     <div className="post-card-image" style={{
-                        backgroundImage: `url(${process.env.GATSBY_FLOTIQ_BASE_URL}/image/260x0/${post.image[0].id}.${post.image[0].extension})` ,
+                        backgroundImage: `url(https://api.flotiq.com/image/260x0/${post.image[0].id}.${post.image[0].extension})` ,
                     }}/> : <div className="post-card-image" />}
                 <h2 className="post-card-title">{post.name}</h2>
             </header>

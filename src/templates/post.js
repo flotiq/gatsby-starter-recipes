@@ -23,7 +23,7 @@ const Post = ({ data }) => {
                     <article className="content">
                         { post.image && post.image[0] ?
                             <figure className="post-feature-image">
-                                <img src={ `${process.env.GATSBY_FLOTIQ_BASE_URL}/image/1280x0/${post.image[0].id}.${post.image[0].extension}` }
+                                <img src={ `https://api.flotiq.com/image/1280x0/${post.image[0].id}.${post.image[0].extension}` }
                                      alt={ post.name } />
                             </figure> : null }
                         <section className="post-full-content">
@@ -68,7 +68,7 @@ const Post = ({ data }) => {
                                             {
                                                 step.image && step.image[0] ?
                                                     <img
-                                                        src={`${process.env.GATSBY_FLOTIQ_BASE_URL}/image/1280x0/${step.image[0].id}.${step.image[0].extension}`}
+                                                        src={`https://api.flotiq.com/image/1280x0/${step.image[0].id}.${step.image[0].extension}`}
                                                         alt={post.name}/> : ''
                                             }
 
