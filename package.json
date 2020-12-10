@@ -1,13 +1,13 @@
 {
-  "name": "gatsby-starter-ghost",
-  "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
+  "name": "gatsby-starter-recipes",
+  "description": "A Gatsby starter to build your own recipes page with Flotiq and Gatsby.",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "Ghost Foundation",
-  "homepage": "https://docs.ghost.org/api/gatsby/",
+  "author": "Flotiq Developers <hello@flotiq.com>",
+  "homepage": "https://flotiq.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tryghost/gatsby-starter-ghost.git"
+    "url": "git+https://github.com/flotiq/gatsby-starter-recipes.git"
   },
   "resolutions": {
     "sharp": "0.23.4"
@@ -16,7 +16,7 @@
     "node": ">= 10.13.0"
   },
   "bugs": {
-    "url": "https://github.com/tryghost/gatsby-starter-ghost/issues"
+    "url": "https://github.com/flotiq/gatsby-starter-recipes/issues"
   },
   "keywords": [
     "gatsby",
@@ -41,7 +41,7 @@
     "@tryghost/helpers": "1.1.22",
     "@tryghost/helpers-gatsby": "1.0.25",
     "cheerio": "1.0.0-rc.3",
-    "gatsby": "^2.26.1",
+    "gatsby": "^2.28.2",
     "gatsby-awesome-pagination": "0.3.5",
     "gatsby-image": "2.2.41",
     "gatsby-plugin-advanced-sitemap": "^1.5.6",
@@ -51,7 +51,7 @@
     "gatsby-plugin-manifest": "2.2.42",
     "gatsby-plugin-offline": "3.0.35",
     "gatsby-plugin-react-helmet": "3.1.22",
-    "gatsby-plugin-sharp": "^2.8.0",
+    "gatsby-plugin-sharp": "^2.10.1",
     "gatsby-source-filesystem": "2.1.48",
     "gatsby-source-flotiq": "^2.2.1",
     "gatsby-source-ghost": "4.0.4",
