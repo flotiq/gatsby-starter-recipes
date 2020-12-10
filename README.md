@@ -15,7 +15,16 @@ Screenshot
 
 ## Quick start
 
-1. **Start project from template using Gatsby CLI**
+1. **Start the project from template using [Flotiq CLI]((https://github.com/flotiq/flotiq-cli))**
+
+    ```bash
+   npm install -g flotiq-cli
+   flotiq start [flotiqApiKey] [projectName] https://github.com/flotiq/gatsby-starter-recipes.git
+    ```
+   * `flotiqApKey` - Read and write API key to your Flotiq account      
+   * `projectName` - project name or project path (if you wish to start or import data from the current directory - use `.`)
+
+1. **You can also start the project from template using Gatsby CLI**
     
     ```bash
     gatsby new gatsby-starter-recipes https://github.com/flotiq/gatsby-starter-recipes.git
@@ -48,15 +57,17 @@ Screenshot
     gatsby develop
     ```
     
-    If you wish to import example recipes to your account, before running `gatsby develop` run:
+    This step is optional and is not necessary if you used flotiq-cli to start the project.
+    
+    If you wish to import example recipes to your account, before running `gatsby develop`, install [flotiq-cli](https://github.com/flotiq/flotiq-cli), and run in project directory:
     
     ```sh
-    node ./.flotiq/importExample.js
+    flotiq import [flotiqApiKey] .
     ```
     
     It will add 4 images and 2 recipes to your Flotiq account.
     
-    _Note: You need to put your Read and write API key in `.env` for import to work. You don't need Recipe content type in your account. If you already have recipes with ids `recipe-1` and `recipe-2` they will be overwritten._
+    _Note: ou need to put your Read and write API key as the `flotiqApiKey` for import to work. You don't need the `Recipe` content type in your account. If you already have recipes with ids `recipe-1` and `recipe-2` they will be overwritten._
    
 1.  **Open the source code and start editing!**
     
@@ -84,6 +95,6 @@ Screenshot
   
 ## Collaborating
 
-   If you wish to to talk with us about this project, feel free to hop on our [discord server](https://discord.gg/FwXcHnX).
+   If you wish to to talk with us about this project, feel free to hop on our [![Discord Chat](https://img.shields.io/discord/682699728454025410.svg)](https://discord.gg/FwXcHnX).
    
    If you found a bug, please report it in [issues](https://github.com/flotiq/gatsby-starter-recipes/issues).
